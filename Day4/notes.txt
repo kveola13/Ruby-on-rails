@@ -1,0 +1,103 @@
+Notat om Rails
+
+What is Rails?
+
+Rails is a web application framework
+
+Gem files are code packages avalible for your Rails application
+
+Bundler is an installer for ruby gems, (rubygems.org) bundler creates a sandbox
+for the gems in the application, and runs it based on the gems
+
+Gemfile.lock is never manually updated, only by the bundler
+
+The app folder:
+assets: static images and code
+config: -database.yml, which databases are avalible and used
+db: development database, all migrations that we create are here
+    -migrations are files that we use to create or update database
+    -migrations are tracked by file name
+test: tests are stored here
+
+classes are collections of methods, we have file names that are written
+in lower case (snake case)
+articles_controller.rb -> Snake case
+
+class ApplicationController -> Camel case
+
+articles_controller -> ArticlesController
+users_controller -> UsersController
+
+files with snake, class with camel
+
+Example:
+
+users_controller.rb
+
+class UsersController < ApplicationController
+
+end
+
+html.erb = embedded ruby code in html
+
+CRUD - Create, read, update, delete
+
+a migration is a file that we use to impact our database,
+if we need to create, update or delete a table, we use a migration file
+
+controller name; plural - todos_controller.rb
+table names are plural; table name - todos table, if it's todoapp
+model name - todo.rb, singluar, class definition is Todo
+
+we are creating todos
+
+name - what kind of todo
+description - detail what the todo is
+ex: rails generate migration create_todos
+this will make a timestamped file and create a migrate folder in the db folder
+
+to create a new todo:
+
+Initiate a new todo object
+
+save the object to database
+
+A primary key is
+
+.new -> creates a new object, but doesn't move it to database
+
+.create -> Creates a new object and moves it to the database
+
+.find -> finds the object
+
+.destroy -> destroys the object
+
+.errors.any? -> error message true false
+
+.errors.full_messages -> full message log
+
+.fist -> display the first in the table
+
+.last -> display last in the table
+
+resources :todos -> gives all of the CRUD routes for todos
+
+(read about 1-to-many associations)
+
+<% %> -> view
+<%= %> -> view and render
+-> these are ruby codes for viewing and rendering.
+
+for a new Todo:
+
+Initiate a todo instance variable
+todo1 = Todo.new
+adding a @ in front, makes it an instannce variable
+so: @todo1 = Todo.new
+
+I can add messages to flash (which is a hash)
+then I can display the contents of the messages that are in flash
+
+Todo.find(params[:id])
+
+Version control =

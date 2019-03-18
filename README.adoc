@@ -1,0 +1,7 @@
+== Ruby on Rails Course
+
+----
+
+Following a ruby on rails course by Mashrur from Udemy
+
+----
